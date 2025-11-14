@@ -19,7 +19,7 @@ class Database {
 
     public function post($title, $content) {
         // Insert data using prepared statements for security
-        $stmt = $db->prepare("INSERT INTO posts (title, content) VALUES (:title, :content)");
+        $stmt = $this->db->prepare("INSERT INTO posts (title, content) VALUES (:title, :content)");
         $stmt->bindParam(':title', $title);
         $stmt->bindParam(':content', $content);
 
@@ -30,7 +30,7 @@ class Database {
 
     public function get_posts() {
         // Select data
-        $results = $db->query('SELECT * FROM posts');
+        $results = $this->db->query('SELECT * FROM posts');
         return $results;
     }
 
