@@ -66,7 +66,7 @@ foreach ($results as $row) {
 	$article = <<<EOF
 	<article class="box post post-excerpt">
 		<header>
-			<h2>$row['title']</h2>
+			<h2>{$row['title']}</h2>
 		</header>
 		<div class="info">
 			<span class="date"><span class="month">Jul<span>y</span></span> <span class="day">8</span><span class="year">, 2014</span></span>
@@ -79,7 +79,7 @@ foreach ($results as $row) {
 		</div>
 		<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
 		<p>
-			$row['content']
+			{$row['content']}
 		</p>
 	</article>
 	EOF;
