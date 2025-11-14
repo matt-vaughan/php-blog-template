@@ -10,8 +10,8 @@ class Database {
             $password = "24!BZ5q"; // Your MySQL password
             $dbname = "blogtemplate"; // The name of your database
             
-            $db = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set error mode to exceptions
+            $this->db = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set error mode to exceptions
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
