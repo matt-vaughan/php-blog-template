@@ -6,7 +6,7 @@ $content = $_POST['content'];
 
 $database = new Database();
 
-$database.post($title, $content);
+$database->post($title, $content);
 
 header("Location: index.php");
 exit(); // or die();
