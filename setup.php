@@ -1,5 +1,5 @@
 <?php
-$servername = "127.0.0.1"; // Use '127.0.0.1' instead of 'localhost'
+$servername = "localhost"; 
 $username = "blogger"; // Your MySQL username
 $password = "24!BZ5q"; // Your MySQL password
 $dbname = "blogtemplate"; // The name of your database
