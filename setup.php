@@ -1,12 +1,12 @@
 <?php
-try {
-    $database_name = './mydatabase.db';
-    // create database if it doesn't exist
-    $db = new SQLite3($database_name); 
-    $db->close();
+$servername = "127.0.0.1"; // Use '127.0.0.1' instead of 'localhost'
+$username = "blogger"; // Your MySQL username
+$password = "24!BZ5q"; // Your MySQL password
+$dbname = "blogtemplate"; // The name of your database
 
+try {
     // Connect to the SQLite database
-    $db = new PDO('sqlite:'.$database_name);
+    $db = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set error mode to exceptions
 
     // Create a table
