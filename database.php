@@ -21,7 +21,7 @@ class Database {
             echo "Error: " . $e->getMessage();
         }
         // Insert data using prepared statements for security
-        $stmt = $this->db->prepare("INSERT INTO posts (title, content) VALUES (:title, :content)");
+        $stmt = $db->prepare("INSERT INTO posts (title, content) VALUES (:title, :content)");
         $stmt->bindParam(':title', $title);
         $stmt->bindParam(':content', $content);
 
@@ -32,7 +32,7 @@ class Database {
 
     public function get_posts() {
         // Select data
-        $results = $this->db->query('SELECT * FROM posts');
+        $results = $db->query('SELECT * FROM posts');
         return $results;
     }
 
