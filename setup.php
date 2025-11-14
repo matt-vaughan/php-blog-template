@@ -3,6 +3,7 @@ try {
     $database_name = 'mydatabase.db';
     // create database if it doesn't exist
     $db = new SQLite3($database_name); 
+    $db->close();
 
     // Connect to the SQLite database
     $db = new PDO('sqlite:'.$database_name);
