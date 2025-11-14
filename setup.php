@@ -1,7 +1,11 @@
 <?php
 try {
+    $database_name = 'mydatabase.db';
+    // create database if it doesn't exist
+    $db = new SQLite3($database_name); 
+
     // Connect to the SQLite database
-    $db = new PDO('sqlite:mydatabase.sqlite');
+    $db = new PDO('sqlite:'.$database_name);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set error mode to exceptions
 
     // Create a table
