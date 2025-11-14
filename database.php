@@ -6,7 +6,7 @@ class Database {
     public function __construct() {
         try {
             // Connect to the SQLite database
-            $db = new PDO('sqlite:mydatabase.db');
+            $db = new PDO('sqlite:./mydatabase.db');
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set error mode to exceptions
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
