@@ -1,23 +1,25 @@
 <?php
 
 class Database {
-    private $db;
+    //private $db;
 
     public function __construct() {
+        
+    }
+
+    public function post($title, $content) {
+        $db = null;
         try {
             $servername = "localhost";
             $username = "blogger"; // Your MySQL username
             $password = "24!BZ5q"; // Your MySQL password
             $dbname = "blogtemplate"; // The name of your database
             
-            $this->db = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-            $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set error mode to exceptions
+            $db = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set error mode to exceptions
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
-    }
-
-    public function post($title, $content) {
         // Insert data using prepared statements for security
         $stmt = $this->db->prepare("INSERT INTO posts (title, content) VALUES (:title, :content)");
         $stmt->bindParam(':title', $title);
