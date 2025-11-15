@@ -8,10 +8,10 @@ class Database {
     public function post($title, $content) {
         $db = null;
         try {
-            $servername = "localhost";
-            $username = "blogger"; // Your MySQL username
-            $password = "24!BZ5q"; // Your MySQL password
-            $dbname = "blogtemplate"; // The name of your database
+            $servername = 'localhost';
+            $username = 'blogger'; // Your MySQL username
+            $password = '24!BZ5q'; // Your MySQL password
+            $dbname = 'blogtemplate'; // The name of your database
             
             $db = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set error mode to exceptions
@@ -31,10 +31,10 @@ class Database {
     public function get_posts() {
         $db = null;
         try {
-            $servername = "127.0.0.1";
-            $username = "blogger"; // Your MySQL username
-            $password = "24!BZ5q"; // Your MySQL password
-            $dbname = "blogtemplate"; // The name of your database
+            $servername = 'localhost';
+            $username = 'blogger'; // Your MySQL username
+            $password = '24!BZ5q'; // Your MySQL password
+            $dbname = 'blogtemplate'; // The name of your database
             
             $db = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set error mode to exceptions
