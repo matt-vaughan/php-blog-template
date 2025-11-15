@@ -21,15 +21,16 @@ $database = new Database();
 $results = $database->get_posts();
 foreach ($results as $row) {
 	$month = $row['date_posted'];
-
+	$content_row = $row['content'];
+	$title_row = $row['title'];
 	$article = '<article class="box post post-excerpt">
 	<header>
-	<h2>' . $row['title'] . ' </h2>
+	<h2> $title_row  </h2>
 		</header>
 		<div class="info">
-			<span class="date"><span class="month">'
-			{ $month }
-			'<span>y</span></span> <span class="day">8</span><span class="year">, 2014</span></span>
+			<span class="date"><span class="month"> 
+			$month 
+			<span>y</span></span> <span class="day">8</span><span class="year">, 2014</span></span>
 			<ul class="stats">
 				<li><a href="#" class="icon fa-comment">16</a></li>
 				<li><a href="#" class="icon fa-heart">32</a></li>
@@ -38,8 +39,8 @@ foreach ($results as $row) {
 			</ul>
 		</div>
 		<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-		<p>' . $row['content']  . "</p>
-	</article>";
+		<p>$title_row</p>
+	</article>';
 	echo $article;
 }
 
