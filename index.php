@@ -20,7 +20,7 @@ $database = new Database();
 
 $results = $database->get_posts();
 foreach ($results as $row) {
-	$month = $row['date_posted'];
+	$month = date("M", strtotime($row['date_posted']));
 	$content_row = $row['content'];
 	$title_row = $row['title'];
 	$article = <<<EOF
@@ -46,16 +46,13 @@ foreach ($results as $row) {
 	echo $article;
 }
 
-?>
-
-					<!-- Pagination -->
-						<div class="pagination">
-							<!--<a href="#" class="button previous">Previous Page</a>-->
-							<div class="pages">
-								<a href="#" class="active">1</a>
-								<a href="#">2</a>
-								<a href="#">3</a>
-								<a href="#">4</a>
+?><script>
+	documet.addEventById("document.getElemenetByID")("")
+	</script>
+								<a id="active_href" href="#" class="active">1</a>
+								<a id="active_href1" href="#">2</a>
+								<a if="active_href2" href="#">3</a>
+								<a if="active_href3" href="#">4</a>
 								<span>&hellip;</span>
 								<a href="#">20</a>
 							</div>
