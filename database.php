@@ -31,7 +31,7 @@ class Database {
     public function get_posts() {
         $db = null;
         try {
-            $servername = "localhost";
+            $servername = "127.0.0.1";
             $username = "blogger"; // Your MySQL username
             $password = "24!BZ5q"; // Your MySQL password
             $dbname = "blogtemplate"; // The name of your database
