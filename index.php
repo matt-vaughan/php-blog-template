@@ -20,7 +20,6 @@ $database = new Database();
 
 $results = $database->get_posts();
 foreach ($results as $row) {
-	echo "<h1>{ $row['id'] } </h1>";
 	$month = $row['date_posted'];
 	$content_row = $row['content'];
 	$title_row = $row['title'];
