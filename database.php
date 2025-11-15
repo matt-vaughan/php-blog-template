@@ -22,9 +22,6 @@ class Database {
         $stmt = $db->prepare("INSERT INTO posts (title, content) VALUES (:title, :content)");
         $stmt->bindParam(':title', $title);
         $stmt->bindParam(':content', $content);
-
-        $title = 'Laptop';
-        $content = 1200.00;
         $stmt->execute();
     }
 
