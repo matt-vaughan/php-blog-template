@@ -25,7 +25,9 @@ foreach ($results as $row) {
 	<h2>' . $row['title'] . ' </h2>
 		</header>
 		<div class="info">
-			<span class="date"><span class="month">Jul<span>y</span></span> <span class="day">8</span><span class="year">, 2014</span></span>
+			<span class="date"><span class="month">'
+			{ new DateTime(Date($row['date_posted']))->format("m"); }
+			'<span>y</span></span> <span class="day">8</span><span class="year">, 2014</span></span>
 			<ul class="stats">
 				<li><a href="#" class="icon fa-comment">16</a></li>
 				<li><a href="#" class="icon fa-heart">32</a></li>
