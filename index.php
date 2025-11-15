@@ -20,7 +20,7 @@ $database = new Database();
 
 $results = $database->get_posts();
 foreach ($results as $row) {
-	$month = DateTime( Date( $row['date_posted']) );
+	$month = $row['date_posted'];
 
 	$article = '<article class="box post post-excerpt">
 	<header>
@@ -28,7 +28,7 @@ foreach ($results as $row) {
 		</header>
 		<div class="info">
 			<span class="date"><span class="month">'
-			{ $month->format("m") }
+			{ $month }
 			'<span>y</span></span> <span class="day">8</span><span class="year">, 2014</span></span>
 			<ul class="stats">
 				<li><a href="#" class="icon fa-comment">16</a></li>
