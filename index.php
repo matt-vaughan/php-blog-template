@@ -40,7 +40,7 @@ foreach ($results as $row) {
 			</ul>
 		</div>
 		<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-		<p>$title_row</p>
+		<p>$content_row</p>
 	</article>
 	EOF;
 	echo $article;
