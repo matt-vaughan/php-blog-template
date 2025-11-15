@@ -15,7 +15,7 @@ class Database {
             
             $db = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set error mode to exceptions
-        } catch (PDOException $e) {
+        } catch (PDOException $e) { 
             echo "Error: " . $e->getMessage();
         }
         // Insert data using prepared statements for security
@@ -42,7 +42,7 @@ class Database {
             echo "Error: " . $e->getMessage();
         }
         // Select data
-        $results = $db->query('SELECT * FROM posts');
+        $results = $db->query("SELECT * FROM posts");
         return $results;
     }
 

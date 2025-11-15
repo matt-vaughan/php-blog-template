@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost"; 
-$username = "blogger"; // Your MySQL username
-$password = "24!BZ5q"; // Your MySQL password
-$dbname = "blogtemplate"; // The name of your database
+$servername = 'localhost'; 
+$username = 'blogger'; // Your MySQL username
+$password = '24!BZ5q'; // Your MySQL password
+$dbname = 'blogtemplate'; // The name of your database
 
 try {
     // Connect to the SQLite database
@@ -10,8 +10,8 @@ try {
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set error mode to exceptions
 
     // Create a table
-    $db->exec('DROP TABLE IF EXISTS posts ;');
-    $db->exec('CREATE TABLE IF NOT EXISTS posts (id INTEGER AUTO_INCREMENT PRIMARY KEY, title TEXT, content TEXT, date_posted DATETIME DEFAULT CURRENT_TIMESTAMP)');
+    $db->exec("DROP TABLE IF EXISTS posts ;");
+    $db->exec("CREATE TABLE IF NOT EXISTS posts (id INTEGER AUTO_INCREMENT PRIMARY KEY, title TEXT, content TEXT, date_posted DATETIME DEFAULT CURRENT_TIMESTAMP)");
 
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
