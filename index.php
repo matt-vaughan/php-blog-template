@@ -61,7 +61,7 @@
 require_once 'database.php';
 $database = new Database();
 
-$result = $database->get_posts();
+$results = $database->get_posts();
 foreach ($results as $row) {
 	$article = '<article class="box post post-excerpt">
 	<header>
@@ -77,7 +77,7 @@ foreach ($results as $row) {
 			</ul>
 		</div>
 		<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-		<p>' . $row['content'] '
+		<p>' . $row['content'] ' .
 		</p>
 	</article>';
 	echo $article;
