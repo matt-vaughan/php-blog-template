@@ -38,9 +38,8 @@ foreach ($results as $row) {
 			</ul>
 		</div>
 		<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-		<p>' . $row['content']  . '
-		</p>
-	</article>';
+		<p>' . $row['content']  . "</p>
+	</article>";
 	echo $article;
 }
 
