@@ -21,6 +21,8 @@ $database = new Database();
 $results = $database->get_posts();
 foreach ($results as $row) {
 	$month = date("M", strtotime($row['date_posted']));
+	$day = date("d", strtotime($row['date_posted']));
+	$year = date("Y", strtotime($row['date_posted']));
 	$content_row = $row['content'];
 	$title_row = $row['title'];
 	$article = <<<EOF
@@ -31,7 +33,11 @@ foreach ($results as $row) {
 		<div class="info">
 			<span class="date"><span class="month"> 
 			$month 
-			<span>y</span></span> <span class="day">8</span><span class="year">, 2014</span></span>
+			<span>y</span></span> <span class="day">
+			$day
+			</span><span class="year">, 
+			$year
+			</span></span>
 			<ul class="stats">
 				<li><a href="#" class="icon fa-comment">16</a></li>
 				<li><a href="#" class="icon fa-heart">32</a></li>
