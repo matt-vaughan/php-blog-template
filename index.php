@@ -23,7 +23,8 @@ foreach ($results as $row) {
 	$month = $row['date_posted'];
 	$content_row = $row['content'];
 	$title_row = $row['title'];
-	$article = '<article class="box post post-excerpt">
+	$article = <<<EOF
+	<article class="box post post-excerpt">
 	<header>
 	<h2> $title_row  </h2>
 		</header>
@@ -40,7 +41,8 @@ foreach ($results as $row) {
 		</div>
 		<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
 		<p>$title_row</p>
-	</article>';
+	</article>
+	EOF;
 	echo $article;
 }
 
