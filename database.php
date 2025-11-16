@@ -1,19 +1,15 @@
 <?php
 
 class Database {
-    public function __construct() {
-        
-    }
-
+    private $servername = 'localhost';
+    private $username = 'blogger'; // Your MySQL username
+    private $password = '24!BZ5q'; // Your MySQL password
+    private $dbname = 'blogtemplate'; // The name of your database
+    
     public function post($title, $content) {
         $db = null;
         try {
-            $servername = 'localhost';
-            $username = 'blogger'; // Your MySQL username
-            $password = '24!BZ5q'; // Your MySQL password
-            $dbname = 'blogtemplate'; // The name of your database
-            
-            $db = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            $db = new PDO("mysql:host={$this->servername};dbname={$this->dbname}", $this->username, $this->password);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set error mode to exceptions
         } catch (PDOException $e) { 
             echo "Error: " . $e->getMessage();
@@ -28,12 +24,7 @@ class Database {
     public function get_posts() {
         $db = null;
         try {
-            $servername = 'localhost';
-            $username = 'blogger'; // Your MySQL username
-            $password = '24!BZ5q'; // Your MySQL password
-            $dbname = 'blogtemplate'; // The name of your database
-            
-            $db = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            $db = new PDO("mysql:host={$this->servername};dbname={$this->dbname}", $this->username, $this->password);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set error mode to exceptions
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
