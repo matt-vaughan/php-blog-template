@@ -18,8 +18,8 @@
 						
 						<label for="blog_content">Content</label>
 						<textarea id="blog_content" name="content" placeholder="content goes here" required></textarea>
-						<label for="image">Header image</label>
-						<input type="file" name="image">
+						<label for="blog_image">Header image</label>
+						<input type="file" id="blog_image" name="image">
 
 						<input type="submit" value="Post">
 					</form>
