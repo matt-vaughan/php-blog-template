@@ -12,7 +12,7 @@
 			<div id="content">
 				<div class="inner">
 					<h2>Make post</h2>
-					<form method="POST" action="./post_action.php">
+					<form method="POST" action="./post_action.php" enctype="multipart/form-data">
 						<label for="title">Title</label>
 						<input type="text" id="title" name="title" placeholder="title" required>
 						
