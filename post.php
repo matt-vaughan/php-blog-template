@@ -14,10 +14,10 @@
 					<h2>Make post</h2>
 					<form method="POST" action="./post_action.php">
 						<label for="title">Title</label>
-						<input type="text" name="title" placeholder="title" required>
+						<input type="text" id="title" name="title" placeholder="title" required>
 						
-						<label for="content">Content</label>
-						<input type="textarea" name="content" placeholder="content goes here" required>
+						<label for="blog_content">Content</label>
+						<textarea id="blog_content" name="content" placeholder="content goes here" required>
 						
 						<label for="image">Header image</label>
 						<input type="file" name="image">
