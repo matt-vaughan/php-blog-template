@@ -17,7 +17,7 @@
 						<input type="text" id="title" name="title" placeholder="title" required>
 						
 						<label for="blog_content">Content</label>
-						<textarea id="blog_content" name="content" placeholder="content goes here" required></textara>
+						<textarea id="blog_content" name="content" placeholder="content goes here" required></textarea>
 						<label for="image">Header image</label>
 						<input type="file" name="image">
 
