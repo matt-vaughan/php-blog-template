@@ -44,6 +44,6 @@ $database = new Database();
 
 $database->post($title, $content, $imageUrl);
 
-header("Location: index.php");
+header("Location: index.php?result=" . $result);
 exit(); // or die();
 ?>
