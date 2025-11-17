@@ -7,7 +7,7 @@ class Database {
     private $password = BLOG_SQL_PASSWORD;
     private $dbname = 'blogtemplate'; // The name of your database
     
-    public function post($title, $content) {
+    public function post($title, $content, $imageUrl) {
         $db = null;
         try {
             $db = new PDO("mysql:host={$this->servername};dbname={$this->dbname}", $this->username, $this->password);
@@ -16,9 +16,10 @@ class Database {
             echo "Error: " . $e->getMessage();
         }
         // Insert data using prepared statements for security
-        $stmt = $db->prepare("INSERT INTO posts (title, content) VALUES (:title, :content)");
+        $stmt = $db->prepare("INSERT INTO posts (title, content, image_url) VALUES (:title, :content, :image_url)");
         $stmt->bindParam(':title', $title);
         $stmt->bindParam(':content', $content);
+        $stmt->bindParam(':image_url', $imageUrl);
         $stmt->execute();
     }
 

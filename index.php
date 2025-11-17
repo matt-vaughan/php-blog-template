@@ -25,6 +25,7 @@ foreach ($results as $row) {
 	$year = date("Y", strtotime($row['date_posted']));
 	$content_row = $row['content'];
 	$title_row = $row['title'];
+	$image_url = $row['image_url'];
 	$article = <<<EOF
 	<article class="box post post-excerpt">
 	<header>
@@ -45,16 +46,19 @@ foreach ($results as $row) {
 				<li><a href="#" class="icon brands fa-facebook-f">128</a></li>
 			</ul>
 		</div>
-		<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+		<a href="#" class="image featured"><img src="$image_url" alt="" /></a>
 		<p>$content_row</p>
 	</article>
 	EOF;
 	echo $article;
 }
 
-?><script>
+?>
+<!--
+	<script>
 	documet.addEventById("document.getElemenetByID")("")
 	</script>
+-->
 								<a id="active_href" href="#" class="active">1</a>
 								<a id="active_href1" href="#">2</a>
 								<a if="active_href2" href="#">3</a>
