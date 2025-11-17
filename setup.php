@@ -1,7 +1,9 @@
 <?php
+require_once '/opt/bitnami/.secrets/blog-sql-password.php';
+
 $servername = 'localhost'; 
 $username = 'blogger'; // Your MySQL username
-$password = '24!BZ5q'; // Your MySQL password
+$password = BLOG_SQL_PASSWORD;
 $dbname = 'blogtemplate'; // The name of your database
 
 try {
