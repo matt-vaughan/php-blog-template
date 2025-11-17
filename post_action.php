@@ -5,7 +5,7 @@ $result = "";
 $imageUrl = "images/pic02.jpg"; // default image
 
 // if the user uploaded an image file as a header image
-if ($_FILES["image"] && $_FILES["image"]["name"] && $_FILES["image"]["name"] != "") {
+if ( isset($_FILES["image"]["name"]) && $_FILES["image"]["name"] != "" ) {
     $target_dir = "/opt/bitnami/blogImgs/"; // Specify the directory where the image will be saved
     $target_file = $target_dir . basename($_FILES["image"]["name"]); // Get the file name from the uploaded file
 
