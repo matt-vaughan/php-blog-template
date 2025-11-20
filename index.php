@@ -76,7 +76,7 @@ foreach ($results as $row) {
 			<div id="sidebar">
 
 				<!-- Logo -->
-					<h1 id="logo"><a href="#">STRIPED</a></h1>
+					<h1 id="logo"><a href="#">BLOG</a></h1>
 
 				<!-- Nav -->
 					<nav id="nav">
@@ -99,8 +99,7 @@ foreach ($results as $row) {
 					<section class="box text-style1">
 						<div class="inner">
 							<p>
-								<strong>Striped:</strong> A free and fully responsive HTML5 site
-								template designed by <a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net/">HTML5 UP</a>
+								<strong>Blog:</strong> Matt's PHP Blog template</a>
 							</p>
 						</div>
 					</section>
