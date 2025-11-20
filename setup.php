@@ -13,7 +13,10 @@ try {
 
     // Create a table
     $db->exec("DROP TABLE IF EXISTS posts ;");
-    $db->exec("CREATE TABLE IF NOT EXISTS posts (id INTEGER AUTO_INCREMENT PRIMARY KEY, title TEXT, content TEXT, image_url TEXT, date_posted DATETIME DEFAULT CURRENT_TIMESTAMP)");
+    $db->exec("CREATE TABLE IF NOT EXISTS posts (id INTEGER AUTO_INCREMENT PRIMARY KEY, title TEXT, content TEXT, image_url TEXT, date_posted DATETIME DEFAULT CURRENT_TIMESTAMP);");
+
+    $db->exec("DROP TABLE IF EXISTS messages ;");
+    $db->exec("CREATE TABLE IF NOT EXISTS messages (id INTEGER AUTO_INCREMENT PRIMARY KEY, username TEXT, content TEXT, date_posted DATETIME DEFAULT CURRENT_TIMESTAMP);");
 
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();

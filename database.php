@@ -36,6 +36,34 @@ class Database {
         return $results;
     }
 
+    public function message($username, $content) {
+        $db = null;
+        try {
+            $db = new PDO("mysql:host={$this->servername};dbname={$this->dbname}", $this->username, $this->password);
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set error mode to exceptions
+        } catch (PDOException $e) { 
+            echo "Error: " . $e->getMessage();
+        }
+        // Insert data using prepared statements for security
+        $stmt = $db->prepare("INSERT INTO messages (username, content) VALUES (:username, :content)");
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':content', $content);
+        $stmt->execute();
+    }
+    
+    public function get_messages() {
+        $db = null;
+        try {
+            $db = new PDO("mysql:host={$this->servername};dbname={$this->dbname}", $this->username, $this->password);
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Set error mode to exceptions
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
+        // Select data
+        $results = $db->query("SELECT * FROM messages");
+        return $results;
+    }
+
 }
 
 
