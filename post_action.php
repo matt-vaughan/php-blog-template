@@ -14,34 +14,24 @@ if ( isset($_FILES["image"]["name"]) && $_FILES["image"]["name"] != "" ) {
         $check = getimagesize($_FILES["image"]["tmp_name"]);
         if($check !== false) {
             //echo "File is an image - " . $check["mime"] . ".";
-            $uploadOk = 1;
+            if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                $result = "imgUploaded";
+                $imageUrl = $target_file;
+                //echo "The file ". htmlspecialchars( basename( $_FILES["image"]["name"])). " has been uploaded.";
+            } else {
+                $result = "imgUploadFailed";
+                //echo "Sorry, there was an error uploading your file.";
+            }
         } else {
-            $uploadOk = 0;
-        }
-    }
-
-    // Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
-        $result = "notAimage";
-    // if everything is ok, try to upload file
-    } else {
-        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-            $result = "imgUploaded";
-            $imageUrl = $target_file;
-            //echo "The file ". htmlspecialchars( basename( $_FILES["image"]["name"])). " has been uploaded.";
-        } else {
-            $result = "imgUploadFailed";
-            //echo "Sorry, there was an error uploading your file.";
+            $result = "notAimage";
         }
     }
 }
-
 
 $title = $_POST['title'];
 $content = $_POST['content'];
 
 $database = new Database();
-
 $database->post($title, $content, $imageUrl);
 
 header("Location: index.php?result=" . $result);
