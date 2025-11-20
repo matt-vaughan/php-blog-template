@@ -54,11 +54,11 @@ foreach ($results as $row) {
 }
 
 ?>
-<!--
+
 	<script>
 	documet.addEventById("document.getElemenetByID")("")
 	</script>
--->
+
 								<a id="active_href" href="#" class="active">1</a>
 								<a id="active_href1" href="#">2</a>
 								<a if="active_href2" href="#">3</a>
