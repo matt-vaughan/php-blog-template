@@ -35,7 +35,7 @@ function generate_message_list() {
 						<input type="text" id="username" name="username" placeholder="username" required>
 						
 						<label for="message">Message</label>
-						<input type="text" id="message" name="message" placeholder="message" required></textarea>
+						<input type="text" id="message" name="message" placeholder="message" required></input>
 						
 						<input type="submit" value="Send">
 					</form>
