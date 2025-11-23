@@ -22,7 +22,7 @@
 						<label for="blog_image">Header image</label>
 						<input type="file" id="blog_image" name="image">
 
-						<input type="submit" value="Post">
+						<input type="submit" value="Post" name="submit">
 					</form>
 				</div>
 			</div>
