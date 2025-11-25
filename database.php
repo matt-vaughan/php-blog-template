@@ -51,7 +51,7 @@ class Database {
         $stmt->execute();
     }
     
-    public function get_messages() {
+    public function get_messages($limit=null) {
         $db = null;
         try {
             $db = new PDO("mysql:host={$this->servername};dbname={$this->dbname}", $this->username, $this->password);
@@ -59,8 +59,14 @@ class Database {
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
         }
-        // Select data
-        $results = $db->query("SELECT * FROM messages");
+        
+        $results = null;
+        if ( $limit != null ) {
+            $results = $db->query("SELECT * FROM messages ORDER BY date_posted DESC LIMIT " . $limit);
+        } else {
+            $results = $db->query("SELECT * FROM messages ORDER BY date_posted DESC");
+        }
+        
         return $results;
     }
 

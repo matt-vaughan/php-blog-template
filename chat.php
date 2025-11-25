@@ -1,24 +1,3 @@
-<?php
-require_once './database.php';
-
-function generate_message_list() {
-	$database = new Database();
-	$msgs = $database->get_messages();
-	foreach ($msgs as $msg) {
-		$username = $msg['username'];
-		$content  = $msg['content'];
-		$date     = $msg['date_posted'];
-		echo <<<EOF
-		<li> 
-		<span class="username"> $username </span> :
-		<span class="message"> $content </span> 
-		<span class="timestamp"> $date </span>
-		</li>
-		EOF;
-	}
-}
-
-?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -44,8 +23,21 @@ function generate_message_list() {
 					</form>
 					<h2>Messages</h2>
 					<ol id="messages">
-						<?php generate_message_list(); ?>
 					</ol>
+					<script>
+						function getMessages() {
+							var xhr = new XMLHttpRequest();
+							xhr.open("POST", "messages.php", true);
+							xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+							xhr.onreadystatechange = function() {
+								if (xhr.readyState == 4 && xhr.status == 200) {
+									document.getElementById("messages").innerHTML = xhr.responseText;
+								}
+							};
+							xhr.send("limit=20"); // Data to send
+						}
+						setInterval(getMessages, 1000);
+					</script>
 				</div>
 			</div>
 
