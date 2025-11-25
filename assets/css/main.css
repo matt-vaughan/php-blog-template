@@ -8,6 +8,7 @@ span.username {
 
 span.message {
 	color: black;
+	font-size: large;
 }
 
 span.timestamp {
