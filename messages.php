@@ -6,8 +6,9 @@ require_once './database.php';
 function generate_message_list() {
 	$database = new Database();
 	$msgs = $database->get_messages();
-    $msgs = array_reverse($msgs); // put in ascending order
+    //$msgs = array_reverse($msgs); // put in ascending order
 
+    echo "got here";
     foreach ($msgs as $msg) {
 		$username = $msg['username'];
 		$content  = $msg['content'];
