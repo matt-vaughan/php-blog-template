@@ -64,7 +64,7 @@ class Database {
         if ( $limit != null ) {
             $results = $db->query("SELECT * FROM messages ORDER BY date_posted DESC LIMIT " . $limit);
         } else {
-            $results = $db->query("SELECT * FROM messages");
+            $results = $db->query("SELECT * FROM messages ORDER BY data_posted DESC");
         }
         
         return $results;
