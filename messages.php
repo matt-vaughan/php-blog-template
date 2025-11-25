@@ -1,11 +1,11 @@
 <?php
 require_once './database.php';
 
-$limit = (int) $_POST['limit'];
+//$limit = (int) $_POST['limit'];
 
 function generate_message_list() {
 	$database = new Database();
-	$msgs = $database->get_messages($limit);
+	$msgs = $database->get_messages();
     $msgs = array_reverse($msgs); // put in ascending order
 
     foreach ($msgs as $msg) {
