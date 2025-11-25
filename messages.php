@@ -3,7 +3,6 @@ require_once './database.php';
 
 $database = new Database();
 $msgs = $database->get_messages();
-$msgs = array_reverse($msgs); // put in ascending order
 
 foreach ($msgs as $msg) {
     $username = $msg['username'];
