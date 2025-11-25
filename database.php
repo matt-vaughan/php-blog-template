@@ -62,7 +62,8 @@ class Database {
         
         $results = null;
         if ( $limit != null ) {
-            $results = $db->query("SELECT * FROM messages ORDER BY date_posted DESC LIMIT " . $limit);
+            $limit = (int) $limit;
+            $results = $db->query("SELECT * FROM (SELECT * FROM messages ORDER BY date_posted DESC LIMIT " . $limit . ") AS subquery_alias ORDER BY date_posted ASC");
         } else {
             $results = $db->query("SELECT * FROM (SELECT * FROM messages ORDER BY date_posted DESC) AS subquery_alias ORDER BY date_posted ASC");
         }
